@@ -1,0 +1,54 @@
+﻿@*Ciao ragazzi oggi iniziamo a muovere i primi passi con questo fantastico Asp .Net Core MVC!
+Dobbiamo realizzare un’applicazione web che ci aiuti a gestire la nostra pizzeria.
+Abbiamo bisogno di creare la nostra prima pagina (index) dove mostriamo tutte le pizze che prepariamo.
+Una pizza avrà le seguenti informazioni :
+un nome
+una descrizione
+una foto
+un prezzo
+Modifichiamo quindi la view Index.cshtml generata in automatico da .Net Core scrivendo l’html che serve a noi per mostrare
+l’elenco delle pizze (possiamo creare una tabella con bootstrap o una qualche grafica a nostro piacimento che mostri
+l’elenco delle pizze...proviamo un po’ di creatività se vogliamo!)*@
+
+<table>
+    <thead>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Picture
+        </th>
+        <th>
+            Price
+        </th>
+    </thead>
+    <tbody>
+        
+        @for(int i=0;i < 5; i++)
+        {
+            @:<tr style="border-block: 1px solid black">
+                <td>
+                    <span>
+                        Pizza @i
+                    </span>
+                </td>
+                <td>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </td>
+                <td>
+                    <img src="https://img.pizza/150/150" alt="pizza{@i}">
+                </td>
+                <td>
+                    <span>
+                        @{int randomNumber = new Random().Next(9, 16);} @randomNumber,00 €
+                    </span>
+                </td>
+            @:</tr>
+        }
+    </tbody>
+</table>
